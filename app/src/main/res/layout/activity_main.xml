@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="40dp"
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    >
+
+
+    <ImageView
+        android:id="@+id/img_bell"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_brand"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/ic_bell_foreground" />
+
+    <ImageView
+        android:id="@+id/img_brand"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/brand_108fmk" />
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/shape_inputsearch"
+        android:gravity="center"
+        app:iconifiedByDefault="false"
+        app:layout_constraintTop_toBottomOf="@+id/reyclerView"
+        app:queryHint="Tìm kiếm món ăn"
+        tools:layout_editor_absoluteX="30dp" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpBanner"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_brand"
+        android:layout_marginVertical="10dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/vpBanner"
+        tools:layout_editor_absoluteX="31dp" />
+
+<!--    <ListView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginVertical="20dp"-->
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginStart="10dp"
+        android:text="Top sản phẩm bán chạy:"
+        android:textColor="#333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTopProducts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="20dp"
+        android:divider="@android:color/transparent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
+        app:layout_constraintTop_toBottomOf="@+id/textView30"
+        tools:layout_editor_absoluteX="40dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bottom_nav_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:itemIconSize="30dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navgation_view" />
+</androidx.constraintlayout.widget.ConstraintLayout>
